@@ -19,7 +19,7 @@ function Login() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name:credentials.name,
+
         email: credentials.email,
         password: credentials.password,
       }),
@@ -32,8 +32,10 @@ function Login() {
       alert('Login successful!');
       localStorage.setItem("userEmail", credentials.email);
       localStorage.setItem("authToken", json.authToken);
-      localStorage.setItem("userName", json.name); // Store userName from server response
-      console.log(localStorage.getItem("userName"));
+      // localStorage.setItem("userName", json.name);
+      localStorage.setItem("loggedin", true)
+      // Store userName from server response
+      // console.log(localStorage.getItem("userName"));
       console.log(localStorage.getItem("authToken"));
       // Navigate to a protected route or dashboard
       navigate('/');

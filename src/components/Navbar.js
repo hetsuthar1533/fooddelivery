@@ -53,7 +53,7 @@ function Navbar() {
                 </div>
                 :
                 <div>
-                  <span className="text-white mx-2">Hello, {userName}!</span>
+                  {/* <span className="text-white mx-2">Hello, {userName}!</span> */}
 
                   <div className='btn bg-white text-success mx-2' onClick={() => { setCartView(true) }}>
                     My Cart {''}

@@ -5,6 +5,9 @@ const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const jwtSecret = "MyNameisHetsuthar"
+
+
+
 router.post('/createuser', 
   [  body('email').isEmail(),
     body('name').isLength({ min: 3 }),
@@ -43,7 +46,6 @@ router.post('/createuser',
 
 
 //login 
-
 router.post('/login', 
   [  body('email').isEmail(),
     body("password", 'password must be 5 char').isLength({ min: 5 })

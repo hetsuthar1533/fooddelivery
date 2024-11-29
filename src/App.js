@@ -19,7 +19,10 @@ import Signup from './screens/Signup.js';
 import { CartProvider } from './components/contexReducer.js';
 import Cart from './screens/Cart.js';
 import MyOrders from './screens/MyOrders.js';
+import Pagenot from './components/Pagenot.js';
+import PriveteRoute from './components/PrivetRoute.js';
 function App() {
+  // const isLogin = localStorage.setItem("loggedIn")
   return (
     <CartProvider>
 
@@ -30,7 +33,8 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/createuser" element={<Signup />} />
-            <Route exact path="/myOrder" element={<MyOrders />} />
+            <Route exact path="/myOrder" element={<PriveteRoute element={MyOrders} />} /> {/* Protected Route */}
+            <Route path="*" element={<Pagenot />} /> {/* This should be the last route */}
 
 
 
